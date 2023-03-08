@@ -1,0 +1,1239 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Media;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AlchemyAlpha0._1
+{
+    static class DataBank
+    {
+        private static int bueyr = 0;
+        private static int order = 0;
+        private static int money = 240;
+        /// элементы
+        private static int hydrogen = 0;// +
+        private static int sulfur = 0; // +
+        private static int Helium = 0;//гелий + +
+        private static int Boron = 0;//бор ++
+        private static int Carbon = 10;//углерод // не добавляю в покупки
+        private static int Nitrogen = 0;//азот ++
+        private static int Oxygen = 777;//кислород 
+        private static int Chlorine = 0;//хлор ++
+        /// кол-во синтезируемого вещества
+        private static int Hydrogen_Sulfide = 0;
+        private static int hel_hel_hel = 0;// получение из 3 гелиев одного углерода
+        private static int helium_hydrogen = 0;//получение гидрогелия из гелия и гидрогена
+        private static int carbid_bora = 0;//получение карбида бора из карбона и бора
+        private static int nitrogen_boron = 0;//получение нитрида бора из азота и бора
+        private static int oksid_azota = 0;//оксид азота из азота и кислорода
+        private static int dioksid_hlora = 0;//диоксид хлора из хлора и двух кислорода 
+        private static int trihlorid_azota = 0;//трихлорид азота из азотов и трех хлора
+        /// комбинация для синтеза
+        private static string HydrogenSulfide = "H2 + S";
+        private static string helhelhel = "He + He + He";
+        private static string heliumhydrogen = "He + H";
+        private static string carbidbora = "C + B";
+        private static string nitrogenboron = "N + B";
+        private static string oksidazota = "N + O";
+        private static string dioksidhlora = "Cl + O2";
+        private static string trihloridazota = "N + Cl3";
+
+        private static bool sound_volume = true;
+
+
+        public static int get_bueyr()
+        {
+            return bueyr;
+        }
+        public static void set_bueyr(int buy)
+        {
+            bueyr = buy;
+        }
+        public static int get_money()
+        {
+            return money;
+        }
+        public static void set_money(int monet)
+        {
+            money = monet;
+        }
+        public static int get_order()
+        {
+            return order;
+        }
+        public static void set_order(int ordet)
+        {
+            order = ordet;
+        }
+        
+        public static int get_hydrogen()
+        {
+            return hydrogen;
+        }
+        public static void set_hydrogen(int hydroget)
+        {
+            hydrogen = hydroget;
+        }
+        public static int get_sulfur()
+        {
+            return sulfur;
+        }
+        public static void set_sulfur(int sulfut)
+        {
+            sulfur = sulfut;
+        }
+        public static int get_helium()
+        {
+            return Helium;
+        }
+        public static void set_helium(int heliut)
+        {
+            Helium= heliut;
+        }
+        public static int get_boron()
+        {
+            return Boron;
+        }
+        public static void set_boron(int borot)
+        {
+            Boron= borot;
+        }
+        public static int get_carbon()
+        {
+            return Carbon;
+        }
+        public static void set_carbon(int carbon)
+        {
+            Carbon= carbon;
+        }
+        public static int get_nitrogen()
+        {
+            return Nitrogen;
+        }
+        public static void set_nitrogen(int nitrogen)
+        {
+            Nitrogen= nitrogen;
+        }
+        public static int get_oxygen()
+        {
+            return Oxygen;
+        }
+        public static void set_oxygen(int oxygen)
+        {
+            Oxygen= oxygen;
+        }
+        public static int get_chlorine()
+        {
+            return Chlorine;
+        }
+        public static void set_chlorine(int chlorine)
+        {
+            Chlorine= chlorine;
+        }
+        
+        public static int get_hydrogen_sulfide()
+        {
+            return Hydrogen_Sulfide;
+        }
+        public static void set_hydrogen_sulfide(int hydrogenfid)
+        {
+            Hydrogen_Sulfide= hydrogenfid;
+        }
+        public static int get_hel_hel_hel()
+        {
+            return hel_hel_hel;
+        }
+        public static void set_hel_hel_hel(int hel_hel)
+        {
+            hel_hel_hel= hel_hel;
+        }
+        public static int get_helium_hydrogen()
+        {
+            return helium_hydrogen;
+        }
+        public static void set_helium_hydrogen(int helium_hydrogent)
+        {
+            helium_hydrogen= helium_hydrogent;
+        }
+        public static int get_carbid_bora()
+        {
+            return carbid_bora;
+        }
+        public static void set_carbid_bora(int carbid_borat)
+        {
+            carbid_bora= carbid_borat;
+        }
+        public static int get_nitrogen_boron()
+        {
+            return nitrogen_boron;
+        }
+        public static void set_nitrogen_boron(int nitrogen_noront)
+        {
+            nitrogen_boron= nitrogen_noront;
+        }
+        public static int get_oksid_azota()
+        {
+            return oksid_azota;
+        }
+        public static void set_oksid_azota(int oksid_azott)
+        {
+            oksid_azota= oksid_azott;
+        }
+        public static int get_dioksid_hlora()
+        {
+            return dioksid_hlora;
+        }
+        public static void set_dioksid_hlora(int dioksid_hlorat)
+        {
+            dioksid_hlora= dioksid_hlorat;
+        }
+        public static int get_trihlorid_azota()
+        {
+            return trihlorid_azota;
+        }
+        public static void set_trihlorid_azota(int trihlorid_azott)
+        {
+            trihlorid_azota= trihlorid_azott;
+        }
+        
+        public static string get_HydrogenSulfide()
+        {
+            return HydrogenSulfide;
+        }
+        public static string get_helhelhel()
+        {
+            return helhelhel;
+        }
+        public static string get_heliumhydrogen()
+        {
+            return heliumhydrogen;
+        }
+        public static string get_carbidbora()
+        {
+            return carbidbora;
+        }
+        public static string get_nitrogenboron()
+        {
+            return nitrogenboron;
+        }
+        public static string get_oksidazota()
+        {
+            return oksidazota;
+        }
+        public static string get_dioksidhlora()
+        {
+            return dioksidhlora;
+        }
+        public static string get_trihloridazota()
+        {
+            return trihloridazota;
+        }
+
+        public static bool get_sound_volume()
+        {
+            return sound_volume;
+        }
+        public static void set_sound_volume(bool volume) 
+        { 
+            sound_volume = volume; 
+        }
+
+        public static List<string> getallstr()
+        {
+            var fieldValues = typeof(DataBank)
+                                 .GetFields().Where(x => x.FieldType == typeof(int))
+                                 .Select(field => field.GetValue(null).ToString())
+                                 .ToList();
+            Console.WriteLine(fieldValues);
+            return fieldValues;
+
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Media;
+using System.Diagnostics;
+
+namespace AlchemyAlpha0._1
+{
+    public partial class HomeWindow : Form
+    {
+        SoundPlayer sound = new SoundPlayer();
+
+        public HomeWindow()
+        {
+            InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+
+        }
+
+        private void HomeWindow_Load(object sender, EventArgs e)
+        {
+            if (DataBank.get_sound_volume() == true)
+            {
+                Sound_button.BackgroundImage = Properties.Resources.volume_on;
+            }
+            else if (DataBank.get_sound_volume() == false)
+            {
+                Sound_button.BackgroundImage = Properties.Resources.volume_off;
+            }
+            if (DataBank.get_sound_volume() == true)
+            {
+                SoundPlayer sound = new SoundPlayer(Properties.Resources.secunda);
+                sound.PlayLooping();
+            }
+        }
+
+        private void Play_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainWindow main = new MainWindow();
+            main.Show();
+        }
+
+        private void Exit_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Sound_button_Click(object sender, EventArgs e)
+        {
+            if (DataBank.get_sound_volume() == true)
+            {
+                Sound_button.BackgroundImage = Properties.Resources.volume_off;
+                DataBank.set_sound_volume(false);
+                sound.Stop();
+            }
+            else if (DataBank.get_sound_volume() == false)
+            {
+                Sound_button.BackgroundImage = Properties.Resources.volume_on;
+                DataBank.set_sound_volume(true);
+                SoundPlayer sound = new SoundPlayer(Properties.Resources.secunda);
+                sound.PlayLooping();
+            }
+        }
+
+        private void Author_button_Click(object sender, EventArgs e)
+        {
+            if (panel1.Visible == true)
+            {
+                panel1.Visible = false;
+            }
+            else if (panel1.Visible == false)
+            {
+                panel1.Visible = true;
+            }
+        }
+
+        private void Load_Save_button_Click(object sender, EventArgs e)
+        {
+            Load_Save_button.BackColor = Color.LightGoldenrodYellow;
+            Load_Save_button.Text = "Завантажено!";
+  
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+
+            string[] fileText = File.ReadAllLines(openFileDialog1.FileName);
+            do
+            {
+                DataBank.set_order(Int32.Parse(fileText[0]));
+                DataBank.set_money(Int32.Parse(fileText[1]));
+                DataBank.set_hydrogen(Int32.Parse(fileText[2]));
+                DataBank.set_sulfur(Int32.Parse(fileText[3]));
+                DataBank.set_helium(Int32.Parse(fileText[4]));
+                DataBank.set_boron(Int32.Parse(fileText[5]));
+                DataBank.set_carbon(Int32.Parse(fileText[6]));
+                DataBank.set_nitrogen(Int32.Parse(fileText[7]));
+                DataBank.set_oxygen(Int32.Parse(fileText[8]));
+                DataBank.set_chlorine(Int32.Parse(fileText[9]));
+                DataBank.set_hydrogen_sulfide(Int32.Parse(fileText[10]));
+                DataBank.set_hel_hel_hel(Int32.Parse(fileText[11]));
+                DataBank.set_helium_hydrogen(Int32.Parse(fileText[12]));
+                DataBank.set_carbid_bora(Int32.Parse(fileText[13]));
+                DataBank.set_nitrogen_boron(Int32.Parse(fileText[14]));
+                DataBank.set_oksid_azota(Int32.Parse(fileText[15]));
+                DataBank.set_trihlorid_azota(Int32.Parse(fileText[16]));
+            }
+            while (false);
+
+
+            MessageBox.Show("Файл відкрито", "Робота з файлом");
+        }
+        }
+    }
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Media;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static AlchemyAlpha0._1.Program;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+
+namespace AlchemyAlpha0._1
+{
+    public partial class MainWindow : Form
+    {        
+        public MainWindow()
+        {
+            InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+            saveFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Properties.Resources.fon_1;
+            if (DataBank.get_sound_volume() == true)
+            {
+                SoundPlayer sound = new SoundPlayer(Properties.Resources.house);
+                sound.PlayLooping();
+            }
+            Inventory_Panel.Visible = false;
+            Recipes_Panel.Visible = false;
+            Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+            Hydrogen_label.Text = "Водород: " + DataBank.get_hydrogen();
+            Sulfur_label.Text = "Кристал Вілідора: " + DataBank.get_sulfur();
+            Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
+            Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+            Helium_label.Text = "Дихання Мілмулніра: " + DataBank.get_helium();
+            Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
+            Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.get_hydrogen_sulfide();
+            hel_hel_hel_label.Text = "Корунда: " + DataBank.get_carbon();
+            helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.get_helium_hydrogen();
+            carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.get_carbid_bora();
+            oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.get_nitrogen_boron();
+            dioksid_hlora_label.Text = "Пахощі: " + DataBank.get_oksid_azota();
+            trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.get_dioksid_hlora();
+            nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.get_trihlorid_azota();
+            panel1.Size = new Size(500, 545);
+            panel1.Location = new Point(1500, 400);
+            if (DataBank.get_bueyr() == 1)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._1;
+                panel1.BackgroundImageLayout = ImageLayout.Zoom;
+                textBox1.Visible = true;
+                textBox1.Text = "Доброго дня алхімік, мені потрібен яд Вовча Загибель, не задавай зайвих запитань і я доплачу за працю";
+            }
+            if (DataBank.get_bueyr() == 2)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._2;
+                textBox1.Visible = true;
+                textBox1.Text = "Потрібна ектоплазма для добрива, у невеликих кульках";
+            }
+            if (DataBank.get_bueyr() == 3)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._3;
+                textBox1.Visible = true;
+                textBox1.Text = "Усього доброго, міський алхімік, для нашої церкви потрібні нові пахощі. Церковна парафія буде тобі вдячна";
+            }
+            if (DataBank.get_bueyr() == 4)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._4;
+                textBox1.Visible = true;
+                textBox1.Text = "Привести колега, для моїх ексерементів потрібна Сіль Порожнечі, потім зайду покажу результати";
+            }
+            if (DataBank.get_bueyr() == 5)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._5;
+                textBox1.Visible = true;
+                textBox1.Text = "Потрібно Сторічне Добриво, мої рослини помирають від вашого холодного клімату.";
+            }
+            if (DataBank.get_bueyr() == 6)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._6;
+                textBox1.Visible = true;
+                textBox1.Text = "У кузні потрібна нова партія Злитків Альтеіда. Впораєшся за декілька днів?";
+            }
+            if (DataBank.get_bueyr() == 7)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._7;
+                textBox1.Visible = true;
+                textBox1.Text = "У бібліотеці завелися щури. Відвідувачі не дотримувалися правила \"З їжею не можна\". Знайдіть відповідний засіб вирішення проблеми.(Смрад Аарду)";
+            }
+            if (DataBank.get_bueyr() == 8)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._8;
+                textBox1.Visible = true;
+                textBox1.Text = "На річницю хочу подарувати дружині намисто із Мрачними Кристалами. Впораєтеся із замовленням?";
+            }
+            if (DataBank.get_bueyr() == 9)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._1;
+                textBox1.Visible = true;
+                textBox1.Text = "Для моїх цілей знадобився Кристал Вілідора. Чим швидше дістанеш, тим більше отримаєш";
+            }
+        }
+
+        private void Shop_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ShopWindows shop = new ShopWindows();
+            shop.Show();
+        }
+
+        private void Alchemy_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AlchemyWindows alchemy = new AlchemyWindows();
+            alchemy.Show();
+        }
+
+        private void Inventory_Button_Click(object sender, EventArgs e)
+        {
+            Inventory_Panel.Visible = true;
+        }
+
+        private void Recipes_Button_Click(object sender, EventArgs e)
+        {
+            Recipes_Panel.Visible = true;
+        }
+
+        private void Home_Button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            HomeWindow home = new HomeWindow();
+            home.Show();
+        }
+
+        private void Inventory_Close_Button_Click(object sender, EventArgs e)
+        {
+            Inventory_Panel.Visible = false;
+        }
+
+        private void Recipes_Close_Button_Click(object sender, EventArgs e)
+        {
+            Recipes_Panel.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            DataBank.set_bueyr(rnd.Next(1, 10));
+            if (DataBank.get_bueyr() == 1)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._1;
+                panel1.BackgroundImageLayout = ImageLayout.Zoom;
+                textBox1.Visible = true;
+                textBox1.Text = "Доброго дня алхімік, мені потрібен яд Вовча Загибель, не задавай зайвих запитань і я доплачу за працю";
+            }
+            if (DataBank.get_bueyr() == 2)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._2;
+                textBox1.Visible = true;
+                textBox1.Text = "Потрібна ектоплазма для добрива, у невеликих кульках";
+            }
+            if (DataBank.get_bueyr() == 3)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._3;
+                textBox1.Visible = true;
+                textBox1.Text = "Усього доброго, міський алхімік, для нашої церкви потрібні нові пахощі. Церковна парафія буде тобі вдячна";
+            }
+            if (DataBank.get_bueyr() == 4)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._4;
+                textBox1.Visible = true;
+                textBox1.Text = "Привести колега, для моїх ексерементів потрібна Сіль Порожнечі, потім зайду покажу результати";
+            }
+            if (DataBank.get_bueyr() == 5)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._5;
+                textBox1.Visible = true;
+                textBox1.Text = "Потрібно Сторічне Добриво, мої рослини помирають від вашого холодного клімату.";
+            }
+            if (DataBank.get_bueyr() == 6)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._6;
+                textBox1.Visible = true;
+                textBox1.Text = "У кузні потрібна нова партія Злитків Альтеіда. Впораєшся за декілька днів?";
+            }
+            if (DataBank.get_bueyr() == 7)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._7;
+                textBox1.Visible = true;
+                textBox1.Text = "У бібліотеці завелися щури. Відвідувачі не дотримувалися правила \"З їжею не можна\". Знайдіть відповідний засіб вирішення проблеми.(Смрад Аарду)";
+            }
+            if (DataBank.get_bueyr() == 8)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._8;
+                textBox1.Visible = true;
+                textBox1.Text = "На річницю хочу подарувати дружині намисто із Мрачними Кристалами. Впораєтеся із замовленням?";
+            }
+            if (DataBank.get_bueyr() == 9)
+            {
+                panel1.Visible = true;
+                panel1.BackgroundImage = Properties.Resources._1;
+                textBox1.Visible = true;
+                textBox1.Text = "Для моїх цілей знадобився Кристал Вілідора. Чим швидше дістанеш, тим більше отримаєш";
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Turquoise;
+            DataBank.getallstr();
+            {
+                if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                    return;
+                // получаем выбранный файл
+                string filename = saveFileDialog1.FileName;
+                // сохраняем текст в файл
+                string[] files = DataBank.getallstr().ToArray();
+                System.IO.File.WriteAllLines(filename, files);
+
+                MessageBox.Show("Файл збережено", "Робота з файлом");
+            }
+        }
+
+        private void sell_Click(object sender, EventArgs e)
+        {
+            if(DataBank.get_bueyr() == 1)
+            {
+                if (DataBank.get_dioksid_hlora() >= 1)
+                {
+                    DataBank.set_dioksid_hlora(DataBank.get_dioksid_hlora() - 1);
+                    trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.get_dioksid_hlora();
+                    DataBank.set_money(DataBank.get_money() + 50);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
+                    panel1.Visible = false;
+                    textBox1.Text = "";
+                    DataBank.set_bueyr(0);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+            }
+            else if(DataBank.get_bueyr() == 2)
+            {
+                if (DataBank.get_hydrogen_sulfide() >= 1)
+                {
+                    DataBank.set_hydrogen_sulfide(DataBank.get_hydrogen_sulfide() - 1);
+                    helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.get_hydrogen_sulfide();
+                    DataBank.set_money(DataBank.get_money() + 60);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
+                    panel1.Visible = false;
+                    textBox1.Text = "";
+                    DataBank.set_bueyr(0);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+            }
+            else if (DataBank.get_bueyr() == 3)
+            {
+                if (DataBank.get_oksid_azota() >= 1)
+                {
+                    DataBank.set_oksid_azota(DataBank.get_oksid_azota() - 1);
+                    dioksid_hlora_label.Text = "Пахощі: " + DataBank.get_oksid_azota();
+                    DataBank.set_money(DataBank.get_money() + 70);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
+                    panel1.Visible = false;
+                    textBox1.Text = "";
+                    DataBank.set_bueyr(0);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+            }
+            else if (DataBank.get_bueyr() == 4)
+            {
+                if (DataBank.get_nitrogen_boron() >= 1)
+                {
+                    DataBank.set_nitrogen_boron(DataBank.get_nitrogen_boron() - 1);
+                    oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.get_nitrogen_boron();
+                    DataBank.set_money(DataBank.get_money() + 80);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
+                    panel1.Visible = false;
+                    textBox1.Text = "";
+                    DataBank.set_bueyr(0);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+            }
+            else if (DataBank.get_bueyr() == 5)
+            {
+                if (DataBank.get_trihlorid_azota() >= 1)
+                {
+                    DataBank.set_trihlorid_azota(DataBank.get_trihlorid_azota() - 1);
+                    nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.get_trihlorid_azota();
+                    DataBank.set_money(DataBank.get_money() + 90);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
+                    panel1.Visible = false;
+                    textBox1.Text = "";
+                    DataBank.set_bueyr(0);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+            }
+            else if (DataBank.get_bueyr() == 6)
+            {
+                if (DataBank.get_boron() >= 1)
+                {
+                    DataBank.set_boron(DataBank.get_boron() - 1);
+                    Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+                    DataBank.set_money(DataBank.get_money() + 100);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
+                    panel1.Visible = false;
+                    textBox1.Text = "";
+                    DataBank.set_bueyr(0);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+            }
+            else if (DataBank.get_bueyr() == 7)
+            {
+                if (DataBank.get_helium_hydrogen() >= 1)
+                {
+                    DataBank.set_helium_hydrogen(DataBank.get_helium_hydrogen() - 1);
+                    Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.get_helium_hydrogen();
+                    DataBank.set_money(DataBank.get_money() + 55);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
+                    panel1.Visible = false;
+                    textBox1.Text = "";
+                    DataBank.set_bueyr(0);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+            }
+            else if (DataBank.get_bueyr() == 8)
+            {
+                if (DataBank.get_carbid_bora() >= 1)
+                {
+                    DataBank.set_carbid_bora(DataBank.get_carbid_bora() - 1);
+                    carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.get_carbid_bora();
+                    DataBank.set_money(DataBank.get_money() + 65);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
+                    panel1.Visible = false;
+                    textBox1.Text = "";
+                    DataBank.set_bueyr(0);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+            }
+            else if (DataBank.get_bueyr() == 9)
+            {
+                if (DataBank.get_sulfur() >= 1)
+                {
+                    DataBank.set_sulfur(DataBank.get_sulfur() - 1);
+                    Sulfur_label.Text = "Кристал Вілідора: " + DataBank.get_sulfur();
+                    DataBank.set_money(DataBank.get_money() + 75);
+                    Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                    DataBank.set_order(DataBank.get_order() + 1);
+                    label2.Text = "Замовлення:" + DataBank.get_order();
+                    panel1.Visible = false;
+                    textBox1.Text = "";
+                    DataBank.set_bueyr(0);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ви ще не запросили покупця");
+            }
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Media;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace AlchemyAlpha0._1
+{
+    public partial class ShopWindows : Form
+    {
+        public ShopWindows()
+        {
+            InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void Main_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainWindow main = new MainWindow();
+            main.Show();
+        }
+
+        private void ShopWindows_Load(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Properties.Resources.lavka;
+            if (DataBank.get_sound_volume() == true)
+            {
+                SoundPlayer sound = new SoundPlayer(Properties.Resources.bazar);
+                sound.PlayLooping();
+            }
+            Inventory_Panel.Visible = false;
+            Recipes_Panel.Visible = false;
+            Shop_Panel.Visible = true;
+            Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+            Hydrogen_label.Text = "Водород: " + DataBank.get_hydrogen();
+            Sulfur_label.Text = "Кристал Вілідора: " + DataBank.get_sulfur();
+            Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
+            Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+            Helium_label.Text = "Дихання Мілмулніра: " + DataBank.get_helium();
+            Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
+            Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.get_hydrogen_sulfide();
+            hel_hel_hel_label.Text = "Корунда: " + DataBank.get_carbon();
+            helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.get_helium_hydrogen();
+            carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.get_carbid_bora();
+            oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.get_nitrogen_boron();
+            dioksid_hlora_label.Text = "Пахощі: " + DataBank.get_oksid_azota();
+            trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.get_dioksid_hlora();
+            nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.get_trihlorid_azota();
+        }
+
+        private void Home_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeWindow home = new HomeWindow();
+            home.Show();
+        }
+
+        private void Alchemy_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AlchemyWindows alchemy = new AlchemyWindows();
+            alchemy.Show();
+        }
+
+        private void Hydrogen_button_Click(object sender, EventArgs e)
+        {
+            if (DataBank.get_money() >= 10)
+            {
+                DataBank.set_money(DataBank.get_money() - 10);
+                Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                DataBank.set_hydrogen(DataBank.get_hydrogen() + 1);
+                Hydrogen_label.Text = "Водород: " + DataBank.get_hydrogen();
+                
+            }
+            else
+            {
+                MessageBox.Show("У вас недостатньо грошей!");
+            }
+        }
+
+        private void Sulfur_button_Click(object sender, EventArgs e)
+        {
+            if (DataBank.get_money() >= 10)
+            {
+                DataBank.set_money(DataBank.get_money() - 10);
+                Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                DataBank.set_sulfur(DataBank.get_sulfur() + 1);
+                Sulfur_label.Text = "Кристал Вілідора: " + DataBank.get_sulfur();
+             
+            }
+            else
+            {
+                MessageBox.Show("У вас недостатньо грошей!");
+            }
+        }
+
+        private void Chlorine_button_Click(object sender, EventArgs e)
+        {
+            if (DataBank.get_money() >= 20)
+            {
+                DataBank.set_money(DataBank.get_money() - 20);
+                Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                DataBank.set_chlorine(DataBank.get_chlorine() + 1);
+                Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
+                
+            }
+            else
+            {
+                MessageBox.Show("У вас недостатньо грошей!");
+            }
+        }
+
+        private void Boron_button_Click(object sender, EventArgs e)
+        {
+            if (DataBank.get_money() >= 40)
+            {
+                DataBank.set_money(DataBank.get_money() - 40);
+                Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                DataBank.set_boron(DataBank.get_boron() + 1);
+                Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+              
+            }
+            else
+            {
+                MessageBox.Show("У вас недостатньо грошей!");
+            }
+        }
+
+        private void Helium_button_Click(object sender, EventArgs e)
+        {
+            if (DataBank.get_money() >= 40)
+            {
+                DataBank.set_money(DataBank.get_money() - 40);
+                Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                DataBank.set_helium(DataBank.get_helium() + 1);
+                Helium_label.Text = "Дихання Мілмулніра: " + DataBank.get_helium();
+               
+            }
+            else
+            {
+                MessageBox.Show("У вас недостатньо грошей!");
+            }
+        }
+
+        private void Nitrogen_button_Click(object sender, EventArgs e)
+        {
+            if (DataBank.get_money() >= 50)
+            {
+                DataBank.set_money(DataBank.get_money() - 50);
+                Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+                DataBank.set_nitrogen(DataBank.get_nitrogen() + 1);
+                Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
+               
+            }
+            else
+            {
+                MessageBox.Show("У вас недостатньо грошей!");
+            }
+        }
+
+        private void Inventory_Button_Click(object sender, EventArgs e)
+        {
+            Inventory_Panel.Visible = true;
+        }
+
+        private void Inventory_Close_Button_Click(object sender, EventArgs e)
+        {
+            Inventory_Panel.Visible = false;
+        }
+
+        private void Recipes_Button_Click(object sender, EventArgs e)
+        {
+            Recipes_Panel.Visible = true;
+        }
+
+        private void Recipes_Close_Button_Click(object sender, EventArgs e)
+        {
+            Recipes_Panel.Visible = false;
+        }
+
+        private void peoples_orders_Click(object sender, EventArgs e)
+        {
+             
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Media;
+using System.Reflection.Emit;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+namespace AlchemyAlpha0._1
+{
+    public partial class AlchemyWindows : Form
+    {
+        public AlchemyWindows()
+        {
+            InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void AlchemyWindows_Load(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Properties.Resources.mag3;
+            if (DataBank.get_sound_volume() == true)
+            {
+                SoundPlayer sound = new SoundPlayer(Properties.Resources.water);
+                sound.PlayLooping();
+            }
+            Inventory_Panel.Visible = false;
+            Recipes_Panel.Visible = false;
+            Alchemy_Panel.Visible = true;
+            Money_label.Text = "Гроші: " + DataBank.get_money() + "$";
+            Hydrogen_label.Text = "Водород: " + DataBank.get_hydrogen();
+            Sulfur_label.Text = "Кристал Вілідора: " + DataBank.get_sulfur();
+            Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
+            Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+            Helium_label.Text = "Дихання Мілмулніра: " + DataBank.get_helium();
+            Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
+            Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.get_hydrogen_sulfide();
+            hel_hel_hel_label.Text = "Корунда: " + DataBank.get_carbon();
+            helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.get_helium_hydrogen();
+            carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.get_carbid_bora();
+            oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.get_nitrogen_boron();
+            dioksid_hlora_label.Text = "Пахощі: " + DataBank.get_oksid_azota();
+            trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.get_dioksid_hlora();
+            nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.get_trihlorid_azota();
+        }
+
+        private void Mix_Button_Click_1(object sender, EventArgs e)
+        {
+            if (DataBank.get_HydrogenSulfide() == Mix_TextBox.Text)
+            {
+                if (DataBank.get_hydrogen() >= 1 && DataBank.get_sulfur() >= 1)
+                {
+                    Mix_Label.Text = "Результат : Смрад Аарду";
+                    DataBank.set_hydrogen_sulfide(DataBank.get_hydrogen_sulfide() + 1);
+                    Hydrogen_Sulfide_label.Text = "Смрад Аарду: " + DataBank.get_hydrogen_sulfide();
+                    DataBank.set_hydrogen(DataBank.get_hydrogen() - 1);
+                    Hydrogen_label.Text = "Водород: " + DataBank.get_hydrogen();
+                    DataBank.set_sulfur(DataBank.get_sulfur() - 1);
+                    Sulfur_label.Text = "Кристал Вілідора: " + DataBank.get_sulfur();
+
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+
+            }
+            if (DataBank.get_helhelhel() == Mix_TextBox.Text)
+            {
+
+                Mix_Label.Text = "Результат : Корунда";
+                hel_hel_hel_label.Text = "Корунда: " + DataBank.get_carbon();
+                DataBank.set_helium(DataBank.get_helium() - 1);
+                Helium_label.Text = "Дихання Мілмулніра: " + DataBank.get_helium();
+
+
+
+
+            }
+            if (DataBank.get_heliumhydrogen() == Mix_TextBox.Text)
+            {
+                if (DataBank.get_helium() >= 1 && DataBank.get_hydrogen() >= 1)
+                {
+                    Mix_Label.Text = "Результат : Ектоплазма";
+                    DataBank.set_hydrogen_sulfide(DataBank.get_hydrogen_sulfide() + 1);
+                    helium_hydrogen_label.Text = "Ектоплазма: " + DataBank.get_hydrogen_sulfide();
+                    DataBank.set_helium(DataBank.get_helium() - 1);
+                    Helium_label.Text = "Дихання Мілмулніра: " + DataBank.get_helium();
+                    DataBank.set_hydrogen(DataBank.get_hydrogen() - 1);
+                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_hydrogen();
+
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+
+
+            }
+            if (DataBank.get_carbidbora() == Mix_TextBox.Text)
+            {
+                if (DataBank.get_boron() >= 1 && DataBank.get_carbon() >= 1)
+                {
+                    Mix_Label.Text = "Результат : Мрачний Кристал";
+                    DataBank.set_carbid_bora(DataBank.get_carbid_bora() + 1);
+                    carbid_bora_label.Text = "Мрачний Кристал: " + DataBank.get_carbid_bora();
+                    DataBank.set_boron(DataBank.get_boron() - 1);
+                    Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+                    DataBank.set_carbon(DataBank.get_carbon() - 1);
+                    hel_hel_hel_label.Text = "Корунда: " + DataBank.get_carbon();
+
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+
+            }
+            if (DataBank.get_nitrogenboron() == Mix_TextBox.Text)
+            {
+                if (DataBank.get_boron() >= 1 && DataBank.get_nitrogen() >= 1)
+                {
+                    Mix_Label.Text = "Результат : Сіль Порожнечі";
+                    DataBank.set_nitrogen_boron(DataBank.get_nitrogen_boron() + 1);
+                    oksid_azota_label.Text = "Сіль Порожнечі: " + DataBank.get_nitrogen_boron();
+                    DataBank.set_boron(DataBank.get_boron() - 1);
+                    Boron_label.Text = "Злиток Альтеіда: " + DataBank.get_boron();
+                    DataBank.set_nitrogen(DataBank.get_nitrogen() - 1);
+                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
+
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+
+            }
+            if (DataBank.get_oksidazota() == Mix_TextBox.Text)
+            {
+                if (DataBank.get_nitrogen() >= 1 && DataBank.get_oxygen() >= 1)
+                {
+                    Mix_Label.Text = "Результат : Пахощі";
+                    DataBank.set_oksid_azota(DataBank.get_oksid_azota() + 1);
+                    dioksid_hlora_label.Text = "Пахощі: " + DataBank.get_oksid_azota();
+                    DataBank.set_nitrogen(DataBank.get_nitrogen() - 1);
+                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
+                    DataBank.set_oxygen(DataBank.get_oxygen() - 1);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+
+            }
+            if (DataBank.get_dioksidhlora() == Mix_TextBox.Text)
+            {
+                if (DataBank.get_chlorine() >= 1 && DataBank.get_oxygen() >= 1)
+                {
+                    Mix_Label.Text = "Результат : Вовча Загибель";
+                    DataBank.set_dioksid_hlora(DataBank.get_dioksid_hlora() + 1);
+                    trihlorid_azota_label.Text = "Вовча Загибель: " + DataBank.get_dioksid_hlora();
+                    DataBank.set_chlorine(DataBank.get_chlorine() - 1);
+                    Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
+                    DataBank.set_oxygen(DataBank.get_oxygen() - 2);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+
+            }
+            if (DataBank.get_trihloridazota() == Mix_TextBox.Text)
+            {
+                if (DataBank.get_nitrogen() >= 1 && DataBank.get_chlorine() >= 1)
+                {
+                    Mix_Label.Text = "Результат : Сторічне Добриво";
+                    DataBank.set_nitrogen_boron(DataBank.get_nitrogen_boron() + 1);
+                    nitrogen_boron_label.Text = "Сторічне Добриво: " + DataBank.get_trihlorid_azota();
+                    DataBank.set_nitrogen(DataBank.get_nitrogen() - 1);
+                    Nitrogen_label.Text = "Слина Сприггана: " + DataBank.get_nitrogen();
+                    DataBank.set_chlorine(DataBank.get_chlorine() - 3);
+                    Chlorine_label.Text = "Вода Шанті: " + DataBank.get_chlorine();
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостатньо інгредієнтів!");
+                }
+            }
+        }
+
+        private void Main_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainWindow main = new MainWindow();
+            main.Show();
+        }
+
+        private void Shop_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ShopWindows shop = new ShopWindows();
+            shop.Show();
+        }
+
+        private void Home_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeWindow home = new HomeWindow();
+            home.Show();
+        }
+
+        private void Inventory_Button_Click(object sender, EventArgs e)
+        {
+            Inventory_Panel.Visible= true;
+        }
+
+        private void Inventory_Close_Button_Click(object sender, EventArgs e)
+        {
+            Inventory_Panel.Visible= false;
+        }
+
+        private void Recipes_Button_Click(object sender, EventArgs e)
+        {
+            Recipes_Panel.Visible = true;
+        }
+
+        private void Recipes_Close_Button_Click(object sender, EventArgs e)
+        {
+            Recipes_Panel.Visible= false;
+        }
+
+       
+    }
+}
